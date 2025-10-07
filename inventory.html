@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Inventory - Goa Drives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">Goa Drives 🚗</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="sell-car.html">Sell Your Car</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="favoritesLi" style="display: none;"><a href="#" id="favoritesBtn">My Favorites</a></li>
+                <li id="loginLi"><a href="#" id="loginBtn">Login</a></li>
+                <li id="signupLi"><a href="#" id="signupBtn" class="cta-btn">Sign Up</a></li>
+                <li id="userProfile" class="user-profile">
+                    <span id="userName">Welcome!</span>
+                </li>
+                <li id="logoutLi" style="display: none;"><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="container">
+        <div class="page-title">
+            <h1>Explore Our Full Inventory</h1>
+            <p>Use the filters to find the perfect car for you.</p>
+        </div>
+
+        <div class="filters-bar">
+            <div class="filter-group">
+                <label for="makeFilterSidebar">Make</label>
+                <select id="makeFilterSidebar">
+                    <option value="all">All Makes</option>
+                    <option value="Maruti Suzuki">Maruti Suzuki</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Tata">Tata</option>
+                    <option value="Mahindra">Mahindra</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="priceFilterSidebar">Price Range</label>
+                <select id="priceFilterSidebar">
+                    <option value="all">All Prices</option>
+                    <option value="500000">Under ₹5 Lakh</option>
+                    <option value="800000">Under ₹8 Lakh</option>
+                    <option value="1200000">Under ₹12 Lakh</option>
+                    <option value="1500000">Over ₹12 Lakh</option>
+                </select>
+            </div>
+            <div class="filter-group fuel-group">
+                <span>Fuel Type:</span>
+                <label><input type="checkbox" name="fuel" value="Petrol"> Petrol</label>
+                <label><input type="checkbox" name="fuel" value="Diesel"> Diesel</label>
+                <label><input type="checkbox" name="fuel" value="Electric"> Electric</label>
+            </div>
+            <button class="btn filter-btn">Apply</button>
+        </div>
+
+        <div class="listings-main">
+            <div class="car-listings" id="carListings">
+                <div class="car-card" data-make="Maruti Suzuki" data-name="2022 Maruti Suzuki Swift VXI" data-price="650000" data-year="2022" data-km="25000" data-fuel="Petrol" data-transmission="Manual"><img src="images/swift.jpg" alt="Maruti Suzuki Swift"><div class="card-content"><h3>2022 Maruti Suzuki Swift VXI</h3><p class="price">₹6,50,000</p><div class="details"><span>25,000 km</span><span>•</span><span>Petrol</span><span>•</span><span>Manual</span></div><button class="btn view-details-btn">View Details</button></div></div>
+                <div class="car-card" data-make="Hyundai" data-name="2021 Hyundai Creta SX" data-price="1180000" data-year="2021" data-km="35000" data-fuel="Diesel" data-transmission="Automatic"><img src="images/creta.jpg" alt="Hyundai Creta"><div class="card-content"><h3>2021 Hyundai Creta SX</h3><p class="price">₹11,80,000</p><div class="details"><span>35,000 km</span><span>•</span><span>Diesel</span><span>•</span><span>Automatic</span></div><button class="btn view-details-btn">View Details</button></div></div>
+                <div class="car-card" data-make="Tata" data-name="2023 Tata Nexon EV" data-price="1450000" data-year="2023" data-km="15000" data-fuel="Electric" data-transmission="Automatic"><img src="images/nexon.jpg" alt="Tata Nexon EV"><div class="card-content"><h3>2023 Tata Nexon EV</h3><p class="price">₹14,50,000</p><div class="details"><span>15,000 km</span><span>•</span><span>Electric</span><span>•</span><span>Automatic</span></div><button class="btn view-details-btn">View Details</button></div></div>
+                <div class="car-card" data-make="Tata" data-name="2023 Tata Punch Creative" data-price="780000" data-year="2023" data-km="18000" data-fuel="Petrol" data-transmission="Manual"><img src="images/punch.jpg" alt="Tata Punch"><div class="card-content"><h3>2023 Tata Punch Creative</h3><p class="price">₹7,80,000</p><div class="details"><span>18,000 km</span><span>•</span><span>Petrol</span><span>•</span><span>Manual</span></div><button class="btn view-details-btn">View Details</button></div></div>
+                <div class="car-card" data-make="Mahindra" data-name="2022 Mahindra Thar LX" data-price="1550000" data-year="2022" data-km="22000" data-fuel="Diesel" data-transmission="Automatic"><img src="images/thar.jpg" alt="Mahindra Thar"><div class="card-content"><h3>2022 Mahindra Thar LX</h3><p class="price">₹15,50,000</p><div class="details"><span>22,000 km</span><span>•</span><span>Diesel</span><span>•</span><span>Automatic</span></div><button class="btn view-details-btn">View Details</button></div></div>
+                <div class="car-card" data-make="Hyundai" data-name="2021 Hyundai i20 Asta" data-price="820000" data-year="2021" data-km="31000" data-fuel="Petrol" data-transmission="Automatic"><img src="images/i20.jpg" alt="Hyundai i20"><div class="card-content"><h3>2021 Hyundai i20 Asta</h3><p class="price">₹8,20,000</p><div class="details"><span>31,000 km</span><span>•</span><span>Petrol</span><span>•</span><span>Automatic</span></div><button class="btn view-details-btn">View Details</button></div></div>
+                <div class="car-card" data-make="Maruti Suzuki" data-name="2020 Maruti Suzuki Ertiga ZXI" data-price="910000" data-year="2020" data-km="45000" data-fuel="Petrol" data-transmission="Manual"><img src="images/ertiga.jpg" alt="Maruti Suzuki Ertiga"><div class="card-content"><h3>2020 Maruti Suzuki Ertiga ZXI</h3><p class="price">₹9,10,000</p><div class="details"><span>45,000 km</span><span>•</span><span>Petrol</span><span>•</span><span>Manual</span></div><button class="btn view-details-btn">View Details</button></div></div>
+            </div>
+            <p id="noResultsMessage" style="display: none; text-align: center; padding: 2rem;">No cars found matching your criteria.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Goa Drives. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="carDetailModal" class="modal-backdrop"><div class="modal-content"><span class="modal-close-btn">&times;</span><img src="" alt="Car Image" id="modalImage" class="modal-image"><h2 id="modalTitle"></h2><p id="modalPrice" class="price"></p><table class="modal-details-table"><tr><td>Year:</td><td id="modalYear"></td></tr><tr><td>Kilometers:</td><td id="modalKm"></td></tr><tr><td>Fuel Type:</td><td id="modalFuel"></td></tr><tr><td>Transmission:</td><td id="modalTransmission"></td></tr></table><button class="btn">Schedule Test Drive</button></div></div>
+    <div id="loginModal" class="modal-backdrop"><div class="modal-content auth-modal"><span class="modal-close-btn">&times;</span><h2>Login to Your Account</h2><form id="loginForm"><div class="form-group"><label for="loginEmail">Email</label><input type="email" id="loginEmail" required></div><div class="form-group"><label for="loginPassword">Password</label><input type="password" id="loginPassword" required></div><button type="submit" class="btn btn-full">Login</button></form><p class="auth-switch">Don't have an account? <a href="#" id="showSignup">Sign Up</a></p></div></div>
+    <div id="signupModal" class="modal-backdrop"><div class="modal-content auth-modal"><span class="modal-close-btn">&times;</span><h2>Create an Account</h2><form id="signupForm"><div class="form-group"><label for="signupUsername">Username</label><input type="text" id="signupUsername" required></div><div class="form-group"><label for="signupEmail">Email</label><input type="email" id="signupEmail" required></div><div class="form-group"><label for="signupPassword">Password</label><input type="password" id="signupPassword" required></div><button type="submit" class="btn btn-full">Sign Up</button></form><p class="auth-switch">Already have an account? <a href="#" id="showLogin">Login</a></p></div></div>
+    <div id="favoritesModal" class="modal-backdrop"><div class="modal-content"><span class="modal-close-btn">&times;</span><h2>My Favorite Cars</h2><div id="favoritesList" class="car-listings"></div></div></div>
+    <div id="toastNotification"><p id="toastMessage"></p></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Car - Goa Drives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <header class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">Goa Drives 🚗</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="sell-car.html">Sell Your Car</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="favoritesLi" style="display: none;"><a href="#" id="favoritesBtn">My Favorites</a></li>
+                <li id="loginLi"><a href="#" id="loginBtn">Login</a></li>
+                <li id="signupLi"><a href="#" id="signupBtn" class="cta-btn">Sign Up</a></li>
+                <li id="userProfile" class="user-profile">
+                    <span id="userName">Welcome!</span>
+                </li>
+                <li id="logoutLi" style="display: none;"><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="container">
+        <div class="page-title">
+            <h1>Sell Your Car With Us</h1>
+            <p>Get a fair and transparent price for your car in just a few steps.</p>
+        </div>
+
+        <div class="form-container">
+            <div class="progress-bar">
+                <div class="step active" data-step="1"><span>1</span><p>Car Details</p></div>
+                <div class="step" data-step="2"><span>2</span><p>Condition</p></div>
+                <div class="step" data-step="3"><span>3</span><p>Contact</p></div>
+            </div>
+
+            <form id="sellCarForm" novalidate>
+                <div class="form-step active" data-step="1"><h3>Step 1: Car Details</h3><div class="form-grid"><div class="form-group"><label for="make">Make</label><input type="text" id="make" placeholder="e.g., Maruti Suzuki" required></div><div class="form-group"><label for="model">Model</label><input type="text" id="model" placeholder="e.g., Swift" required></div><div class="form-group"><label for="year">Year of Registration</label><input type="number" id="year" placeholder="e.g., 2022" required></div><div class="form-group"><label for="km">Kilometers Driven</label><input type="number" id="km" placeholder="e.g., 25000" required></div></div><div class="form-navigation"><button type="button" class="btn next-btn">Next</button></div></div>
+                <div class="form-step" data-step="2"><h3>Step 2: Condition & History</h3><div class="form-group"><label>Ownership</label><div class="radio-tag-group"><input type="radio" id="owner1" name="ownership" value="1st" required checked><label for="owner1">First Owner</label><input type="radio" id="owner2" name="ownership" value="2nd"><label for="owner2">Second Owner</label><input type="radio" id="owner3" name="ownership" value="3rd+"><label for="owner3">Third+</label></div></div><div class="form-group"><label>Overall Condition</label><div class="radio-tag-group"><input type="radio" id="condExcellent" name="condition" value="Excellent" required checked><label for="condExcellent">Excellent</label><input type="radio" id="condGood" name="condition" value="Good"><label for="condGood">Good</label><input type="radio" id="condFair" name="condition" value="Fair"><label for="condFair">Fair</label></div></div><div class="form-group"><label for="issues">Any known issues? (Optional)</label><textarea id="issues" placeholder="e.g., Minor scratch on the left door"></textarea></div><div class="form-navigation"><button type="button" class="btn prev-btn">Previous</button><button type="button" class="btn next-btn">Next</button></div></div>
+                <div class="form-step" data-step="3"><h3>Step 3: Your Contact Details</h3><p>We'll use this to send you our valuation and get in touch.</p><div class="form-grid"><div class="form-group"><label for="name">Your Name</label><input type="text" id="name" placeholder="Enter your full name" required></div><div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" placeholder="Enter your phone number" required></div></div><div class="form-group"><label for="email">Email Address</label><input type="email" id="email" placeholder="Enter your email" required></div><div class="form-navigation"><button type="button" class="btn prev-btn">Previous</button><button type="submit" class="btn">Get Valuation</button></div></div>
+            </form>
+        </div>
+    </main>
+    
+    <footer class="footer"><div class="container"><p>&copy; 2025 Goa Drives. All Rights Reserved.</p></div></footer>
+    <div id="carDetailModal" class="modal-backdrop"><div class="modal-content"><span class="modal-close-btn">&times;</span><img src="" alt="Car Image" id="modalImage" class="modal-image"><h2 id="modalTitle"></h2><p id="modalPrice" class="price"></p><table class="modal-details-table"><tr><td>Year:</td><td id="modalYear"></td></tr><tr><td>Kilometers:</td><td id="modalKm"></td></tr><tr><td>Fuel Type:</td><td id="modalFuel"></td></tr><tr><td>Transmission:</td><td id="modalTransmission"></td></tr></table><button class="btn">Schedule Test Drive</button></div></div>
+    <div id="loginModal" class="modal-backdrop"><div class="modal-content auth-modal"><span class="modal-close-btn">&times;</span><h2>Login to Your Account</h2><form id="loginForm"><div class="form-group"><label for="loginEmail">Email</label><input type="email" id="loginEmail" required></div><div class="form-group"><label for="loginPassword">Password</label><input type="password" id="loginPassword" required></div><button type="submit" class="btn btn-full">Login</button></form><p class="auth-switch">Don't have an account? <a href="#" id="showSignup">Sign Up</a></p></div></div>
+    <div id="signupModal" class="modal-backdrop"><div class="modal-content auth-modal"><span class="modal-close-btn">&times;</span><h2>Create an Account</h2><form id="signupForm"><div class="form-group"><label for="signupUsername">Username</label><input type="text" id="signupUsername" required></div><div class="form-group"><label for="signupEmail">Email</label><input type="email" id="signupEmail" required></div><div class="form-group"><label for="signupPassword">Password</label><input type="password" id="signupPassword" required></div><button type="submit" class="btn btn-full">Sign Up</button></form><p class="auth-switch">Already have an account? <a href="#" id="showLogin">Login</a></p></div></div>
+    <div id="favoritesModal" class="modal-backdrop"><div class="modal-content"><span class="modal-close-btn">&times;</span><h2>My Favorite Cars</h2><div id="favoritesList" class="car-listings"></div></div></div>
+    <div id="toastNotification"><p id="toastMessage"></p></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

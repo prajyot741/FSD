@@ -1,0 +1,132 @@
+/* --- General Styling --- */
+:root {
+    --primary-color: #007bff;
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --grey-color: #555;
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; background-color: #fff; color: var(--dark-color); }
+.container { max-width: 1200px; margin: auto; overflow: hidden; padding: 0 2rem; }
+h1, h2, h3 { margin-bottom: 1rem; }
+img { max-width: 100%; border-radius: 5px; }
+
+/* --- Header & Navigation --- */
+.navbar { background: var(--dark-color); color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.navbar .logo { font-size: 1.5rem; font-weight: bold; color: #fff; text-decoration: none; }
+.navbar ul { display: flex; list-style: none; align-items: center; }
+.navbar ul li a { color: #fff; padding: 0.75rem; margin: 0 0.25rem; text-decoration: none; display: block; }
+.navbar ul li a:hover { background: var(--primary-color); border-radius: 5px; }
+.navbar .cta-btn { background-color: var(--primary-color); border-radius: 5px; }
+.navbar .user-profile { display: none; align-items: center; gap: 0.75rem; font-weight: bold; cursor: pointer; color: #fff; }
+
+/* --- Hero Section --- */
+.hero { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070') no-repeat center center/cover; color: #fff; text-align: center; padding: 6rem 0; }
+.hero h1 { font-size: 3rem; }
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+
+/* --- Car Listings --- */
+#inventory { padding: 2rem 0; }
+.car-listings { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+.car-card { position: relative; background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: var(--card-shadow); overflow: hidden; transition: transform 0.2s ease-in-out; display: flex; flex-direction: column; }
+.car-card:hover { transform: translateY(-5px); }
+.car-card .card-content { padding: 1rem; }
+.car-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.car-card .price { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); margin-bottom: 1rem; }
+.car-card .details { display: flex; justify-content: space-between; background: var(--light-color); padding: 0.75rem 1rem; font-size: 0.9rem; color: var(--grey-color); margin-top: auto; }
+
+/* --- General Button Styling --- */
+.btn { display: inline-block; padding: 0.8rem 1.5rem; margin-top: 1rem; background: var(--primary-color); color: #fff; text-align: center; text-decoration: none; border: none; border-radius: 8px; cursor: pointer; font-size: 1.05rem; font-weight: bold; transition: background-color 0.3s ease; }
+.btn:hover { background-color: #0056b3; }
+.car-card .btn { width: 100%; }
+.btn-full { width: 100%; }
+
+/* --- Footer --- */
+.footer { background: var(--dark-color); color: #fff; text-align: center; padding: 2rem 0; }
+
+/* --- Modal Styling --- */
+.modal-backdrop { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); justify-content: center; align-items: center; }
+.modal-content { background-color: #fefefe; margin: auto; padding: 2rem; border-radius: 8px; width: 90%; max-width: 600px; position: relative; animation: fadeIn 0.3s; max-height: 85vh; overflow-y: auto; }
+.modal-close-btn { color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; }
+.modal-image { width: 100%; height: auto; border-radius: 5px; margin-bottom: 1rem; }
+.modal-details-table { width: 100%; margin: 1.5rem 0; border-collapse: collapse; }
+.modal-details-table td { padding: 0.5rem; border-bottom: 1px solid #eee; }
+.auth-modal { max-width: 450px; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+.auth-switch { text-align: center; margin-top: 1.5rem; }
+.auth-switch a { color: var(--primary-color); font-weight: bold; text-decoration: none; }
+
+/* --- Toast Notification Styling --- */
+#toastNotification { position: fixed; top: 90px; right: 20px; background-color: var(--dark-color); color: #fff; padding: 1rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 2000; opacity: 0; transform: translateX(100%); transition: opacity 0.5s ease, transform 0.5s ease; }
+#toastNotification.show { opacity: 1; transform: translateX(0); }
+
+/* --- Favorites Feature Styling --- */
+.favorite-btn { position: absolute; top: 10px; right: 10px; background: rgba(255, 255, 255, 0.8); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; padding: 0; transition: transform 0.2s ease; }
+.favorite-btn:hover { transform: scale(1.1); }
+.favorite-btn svg { width: 24px; height: 24px; stroke: #333; fill: none; }
+.favorite-btn.active svg { fill: #e74c3c; stroke: #e74c3c; }
+
+/* --- Inventory Page Styling --- */
+.page-title { text-align: center; padding-top: 2rem; border-bottom: 1px solid #eee; margin-bottom: 2rem; }
+.filters-bar { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-end; padding: 1.5rem; background-color: #f9f9f9; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #ddd; }
+.filter-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.filter-group label, .filter-group span { font-weight: bold; font-size: 0.9rem; color: var(--grey-color); }
+.filter-group select, .filter-group input { padding: 0.75rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+.fuel-group { flex-direction: row; align-items: center; gap: 1rem; margin-top: 1.25rem; }
+.fuel-group label { font-weight: normal; }
+.filter-btn { margin-top: 0; padding: 0.75rem 1.5rem; height: fit-content; }
+.listings-main { width: 100%; }
+
+/* --- Sell Your Car Page Styling --- */
+.form-container { background-color: #fff; padding: 2rem; border-radius: 8px; box-shadow: var(--card-shadow); border: 1px solid #ddd; margin-bottom: 2rem; }
+.progress-bar { display: flex; justify-content: space-between; margin-bottom: 2.5rem; position: relative; }
+.progress-bar::before { content: ''; position: absolute; top: 50%; left: 0; transform: translateY(-50%); height: 4px; width: 100%; background-color: #ddd; z-index: 1; }
+.progress-bar .step { display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2; width: 80px; text-align: center; }
+.progress-bar .step span { height: 40px; width: 40px; border-radius: 50%; background-color: #fff; border: 4px solid #ddd; display: flex; justify-content: center; align-items: center; font-weight: bold; transition: all 0.3s ease; }
+.progress-bar .step p { font-size: 0.9rem; margin-top: 0.5rem; color: var(--grey-color); }
+.progress-bar .step.active span { border-color: var(--primary-color); background-color: var(--primary-color); color: #fff; }
+.progress-bar .step.completed span { border-color: #28a745; background-color: #28a745; color: #fff; }
+.form-step { display: none; animation: fadeIn 0.5s; }
+.form-step.active { display: block; }
+.form-step h3 { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.form-navigation { display: flex; justify-content: space-between; margin-top: 2rem; }
+.radio-tag-group { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+.radio-tag-group input[type="radio"] { position: absolute; opacity: 0; }
+.radio-tag-group label { display: inline-block; padding: 0.75rem 1.5rem; border: 1px solid #ccc; border-radius: 50px; cursor: pointer; font-weight: 500; transition: all 0.2s ease-in-out; }
+.radio-tag-group label:hover { background-color: #f0f0f0; border-color: #999; }
+.radio-tag-group input[type="radio"]:checked + label { background-color: var(--primary-color); color: #fff; border-color: var(--primary-color); }
+.input-error { border-color: #e74c3c !important; }
+
+/* --- Contact Page Specific Styling --- */
+.contact-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+}
+.contact-info, .contact-form-section {
+    flex: 1;
+    min-width: 300px;
+}
+.contact-info h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 0.5rem;
+}
+.contact-info p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+.map-container {
+    margin-top: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    box-shadow: var(--card-shadow);
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
